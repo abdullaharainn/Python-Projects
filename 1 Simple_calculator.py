@@ -1,17 +1,26 @@
-while True:
-    operators = input("Enter an operator (+ - * /): ")
+def calculator(): 
+    while True:
+        try:
+            num1 = float(input("Enter number 1: "))
+            num2 = float(input("Enter number 2: "))
+            operator = input("Enter a operator (+, -, *, /): ")
 
-    num1 = int(input("digits 1: "))
-    num2 = int(input("digits 2: "))
+            if operator == "+":
+                result = num1 + num2
+            elif operator == "-":
+                result = num1 - num2
+            elif operator == "*":
+                result = num1 * num2
+            elif operator == "/":
+                result = num1 / num2
+            else:
+                raise ValueError("Invalid Operaotr..!")
+            
+            print(f"Result: {result}")
 
-    if operators == "+":    
-        print("=", num1 + num2)
-    
-    elif operators == "-":  
-        print("=", num1 - num2)
+        except ValueError as e:
+            print(f"Error: {e}")
+        except ZeroDivisionError as z:
+            print(f"Error: {z}. Cannot divide by zero!")
 
-    elif operators == "*":  
-        print("=", num1 * num2)
-
-    elif operators == "/":
-        print("=", round(num1 / num2, 2))
+calculator()
