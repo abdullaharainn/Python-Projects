@@ -85,7 +85,7 @@ print(i + i)""")
     opt = st.radio("Choose an option", q9_opt)
     answers.append(opt)
 
-    q10 = st.subheader("10: It will through?")
+    q10 = st.subheader("10: It will throw?")
     code = ("""i = int(input("Enter a number: "))
 print(i + "a")""")
     st.code(code, language="python")
