@@ -3,9 +3,6 @@ import pathlib as pt
 import base64
 
 #
-with open("assets/PythonBG.png", "rb") as f:
-    data = base64.b64encode(f.read()).decode()
-
 def load_css(file_path):
     with open(file_path) as file:
         st.markdown(f"<style>{file.read()}</style>", unsafe_allow_html=True)
