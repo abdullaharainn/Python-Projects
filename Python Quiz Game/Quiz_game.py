@@ -35,10 +35,16 @@ q15_opt = ("5","2","3","none")
 #
 
 #
+if "game_started" not in st.session_state:
+    st.session_state.game_started = False
+
 i = st.text_input("Wanna Play quiz? (yes / q to quit): ")
 btn = st.button("Enter")
 
 if btn and i.lower() in ("yes", "y"):
+    st.session_state.game_started = True
+
+if st.session_state.game_started:
     st.title("Lets Start! :smiley:")
 
     q1 = st.subheader("1: Which is Variable?")
@@ -166,6 +172,7 @@ print(len(s))""")
 
 #
 elif btn and i.lower() in ("q", "quit"):
+    st.session_state.game_started = False
     st.subheader("OK! Goodbye :innocent:")
     st.stop()
 #
